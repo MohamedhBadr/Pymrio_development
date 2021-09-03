@@ -1,4 +1,4 @@
 # Pymrio_development
 Contributions to the development of Pymrio
 
-This is meant to be an exploration of the Pymrio library and an attempt to parse the EXIOBASE3 data and create functions which loop through the data and collect data relevant to enviornmental pressures per country per year and store them in a table format. 
+The purpose of this script is to use the Pymrio, Pandas, Numpy, Matplotlib libraries to: Parse the EXIOBASE3 data, loop through the data and collect relevent time series data on GHG emissions (as well as other enviornmental stressors) per country and store this information in a table and produce visualizations. 
