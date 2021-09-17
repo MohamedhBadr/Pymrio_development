@@ -1,4 +1,3 @@
-
 #%%
 import pandas as pd
 
@@ -24,8 +23,6 @@ df3 = get_emission('reg2', 'water')
 #df3.to_csv(output_file + '.tsv', sep ='\t')
 
 #visualize the output of the function 
-df3.plot()
-
-#import matplotlib as plt 
-
+ax = df3.unstack(level=0).plot(kind='bar', subplots=True, rot=0, figsize=(36, 24), layout=(4, 6))
+plt.tight_layout()
 # %%
