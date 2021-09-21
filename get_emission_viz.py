@@ -14,8 +14,7 @@ def get_emission_viz(region, emission_type):
     df = test_mrio.emissions.D_cba
     df1 = df[np.in1d(df.index.get_level_values(1), [emission_type])]
     df2 = df1[region]
-    df3 = get_emission(region, emission_type)
-    ax = df3.unstack(level=1).plot(kind='bar', subplots=False, rot=0, figsize=(10, 5), layout=(4, 6))
+    ax = df2.unstack(level=1).plot(kind='bar', subplots=False, rot=0, figsize=(10, 5), layout=(4, 6))
     plt.title(emission_type + '_pollution_in_' +region)
     plt.tight_layout()
 
