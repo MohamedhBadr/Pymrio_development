@@ -6,8 +6,6 @@ import numpy as np
 from pathlib import Path
 import matplotlib as plt
 
-##Import and Proccess EXIO 2017##
-
 
 # %%
 #import Exiobase 2017
@@ -57,10 +55,8 @@ def get_time_series(country_code):
     ax = df2.unstack(level=1).plot(kind='bar', subplots=False, rot=0, figsize=(10, 5), layout=(4, 6))
     plt.title(emission_type + '_pollution_in_' +region)
     plt.tight_layout()
-# %%
-#subset data
-df2 = df.loc[ 'NL' , : ]
-df2
+
+
 # %%
 #Write function to return values 
 def get_time_series(country):
@@ -70,22 +66,16 @@ def get_time_series(country):
 # %%
 #test function (appears to work fine)
 df_russia = get_time_series('RU')
-
-# %%
-df_russia = df_russia.reset_index()
 df_russia
-# %%
-plt.pyplot.title('RU')
-plt.pyplot.bar('index', 'RU',width=0.8, bottom=None, align='center', data=df_russia)
 # %%
 #Write a visualization function
 def get_ts_viz (country_code):
     new_df = get_time_series(country_code)
     new_df = new_df.reset_index()
-    plt.pyplot.title(country_code)
-    plt.pyplot.bar('index', country_code, width=0.8, bottom=None, align='center', data=new_df)
+    plt.pyplot.title('GWP in ' + country_code)
+    plt.pyplot.bar('index', country_code, width=0.75, bottom=None, align='center', data=new_df)
 
 # %%
 #Test visualization function 
-get_ts_viz('NL')
+get_ts_viz('IN')
 # %%
